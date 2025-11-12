@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Enrique2305-gif.github.io/dashboard",
+  "homepage": "https://marsalvatore28.github.io/DashboardSalvatore",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
