@@ -3,42 +3,47 @@
 //import viteLogo from '/vite.svg'
 import './App.css'
 import { Grid } from '@mui/material';
+import HeaderUI from './components/HeaderUI';
+import AlertUI from './components/AlertUI';
 
 function App() {
-//  const [count, setCount] = useState(0)
+// const [count, setCount] = useState(0)
 
-  return (
-    <Grid container spacing={5} justifyContent="center" alignItems="center">
+return (
+<Grid container spacing={5} justifyContent="center" alignItems="center">
 
-      {/* Encabezado */}
-      <Grid size={{ xs: 12, md: 12 }}>Elemento: Encabezado</Grid>
+{/* Encabezado */}
+<Grid size={{ xs: 12, md: 12 }}> <HeaderUI/> Elemento: Encabezado</Grid>
 
-      {/* Alertas */}
-      <Grid size={{ xs: 12, md: 12 }}>Elemento: Alertas</Grid>
+{/* Alertas */}
+<Grid container justifyContent="right" alignItems="center">
+<AlertUI description="No se preveen lluvias"/>
 
-      {/* Selector */}
-      <Grid size={{ xs: 12, md: 3 }}>Elemento: Selector</Grid>
+</Grid>
 
-      {/* Indicadores */}
-      <Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
+{/* Selector */}
+<Grid size={{ xs: 12, md: 3 }}>Elemento: Selector</Grid>
 
-      {/* Gráfico */}
-      <Grid
-            sx={{ display: { xs: "none", md: "block"} }} >
-            Elemento: Gráfico
-        </Grid>
+{/* Indicadores */}
+<Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
 
-      {/* Tabla */}
-      <Grid 
-            sx={{ display: { xs: "none", md: "block" } }}>
-            Elemento: Tabla
-      </Grid>
+{/* Gráfico */}
+<Grid
+sx={{ display: { xs: "none", md: "block"} }} >
+Elemento: Gráfico
+</Grid>
 
-      {/* Información adicional */}
-      <Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>
+{/* Tabla */}
+<Grid
+sx={{ display: { xs: "none", md: "block" } }}>
+Elemento: Tabla
+</Grid>
 
-    </Grid>
-  )
+{/* Información adicional */}
+<Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>
+
+</Grid>
+)
 }
 
 export default App
