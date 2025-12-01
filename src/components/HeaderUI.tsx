@@ -1,5 +1,4 @@
 import Typography from '@mui/material/Typography';
-import React from 'react'; // Importación necesaria en archivos .tsx aunque no se use directamente React.createElement
 
 /**
  * Componente funcional para el encabezado de la aplicación (Dashboard del Clima).
