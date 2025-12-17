@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { DataGrid, type GridColDef } from '@mui/x-data-grid';
-import useFetchData from '../functions/useFetchData';
 import CircularProgress from '@mui/material/CircularProgress';
+import { type OpenMeteoResponse } from '../types/DashboardTypes';
 
 function combineArrays(arrLabels: Array<string>, arrValues1: Array<number>, arrValues2: Array<number>) {
    return arrLabels.map((label, index) => ({
@@ -40,8 +40,13 @@ const columns: GridColDef[] = [
    },
 ];
 
-export default function TableUI() {
-   const data = useFetchData();
+// ✅ AGREGAR: Interfaz para recibir datos como prop
+interface TableUIProps {
+   data: OpenMeteoResponse | null | undefined;
+}
+
+// ✅ MODIFICAR: Recibir data como prop en lugar de usar el hook
+export default function TableUI({ data }: TableUIProps) {
 
    // Manejo de estado de carga
    if (!data) {

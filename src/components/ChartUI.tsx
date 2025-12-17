@@ -2,10 +2,15 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
-import useFetchData from '../functions/useFetchData';
+import { type OpenMeteoResponse } from '../types/DashboardTypes';
 
-export default function ChartUI() {
-   const data = useFetchData();
+// ✅ Interfaz para recibir datos como prop
+interface ChartUIProps {
+   data: OpenMeteoResponse | null | undefined;
+}
+
+// ✅ Recibir data como prop
+export default function ChartUI({ data }: ChartUIProps) {
 
    // Manejo de estado de carga
    if (!data) {
@@ -26,7 +31,7 @@ export default function ChartUI() {
 
    return (
       <>
-         <Typography variant="h5" component="div">
+         <Typography variant="h5" component="div" sx={{ mb: 2, textAlign: 'center' }}>
             Temperatura y Viento - Próximas 24 horas
          </Typography>
          <LineChart
