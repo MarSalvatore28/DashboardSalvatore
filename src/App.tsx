@@ -1,6 +1,4 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
+import { useState } from 'react' // ✅ Descomentar esta línea
 import './App.css'
 import { Grid } from '@mui/material';
 import HeaderUI from './components/HeaderUI';
@@ -12,8 +10,9 @@ import TableUI from './components/TableUI';
 import ChartUI from './components/ChartUI';
 
 function App() {
-  // const [count, setCount] = useState(0)
-  const dataFetcherOutput = useFetchData();
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  
+  const dataFetcherOutput = useFetchData(selectedOption);
 
   return (
     <div>
@@ -25,11 +24,11 @@ function App() {
         {/* Alertas */}
         <Grid container justifyContent="right" alignItems="center">
           <AlertUI description="No se preveen lluvias" />
-
         </Grid>
 
-        {/* Selector */}
-        <Grid size={{ xs: 12, md: 3 }}> <SelectorUI /></Grid>
+        <Grid size={{ xs: 12, md: 3 }}> 
+          <SelectorUI onOptionSelect={setSelectedOption} />
+        </Grid>
 
         {/* Indicadores */}
         <Grid container size={{ xs: 12, md: 9 }} >
